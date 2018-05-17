@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang='en'>
+<head>
+<title>>Welcome to Business Card Generator! </title>
+<meta http-equiv='refresh' content='5;url=home.html'/> 
+</head>
+<body onload="startTime()">
+<center><h1>Welcome to Business Card Generator!</h1><p/>
+You will be redirected to Business Card Generator!<input type='number' id='cont' style='width:22px' value='5' disabled /> seconds.</center><br />
+<div id='txt'></div>
+</body>
+<script>
+var x = document.getElementById("cont");
+setTimeout(function(){ x.value="4" }, 1000);
+setTimeout(function(){ x.value="3" }, 2000);
+setTimeout(function(){ x.value="2" }, 3000);
+setTimeout(function(){ x.value="1" }, 4000);
+setTimeout(function(){ x.value="0" }, 5000);
+
+function startTime(){
+var to=new Date()
+var s=to.getSeconds()
+s=checkTime(s)
+document.getElementById("txt").innerHTML = s+'';
+    var t = setTimeout(function(){ startTime() }, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+
+</script>
+</html>
